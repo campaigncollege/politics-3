@@ -1,6 +1,11 @@
 class Wikipedia
+
   def initialize params
     @content = parse(params[:url])
+  end
+
+  def body
+    @content['revisions'].first['*']
   end
 
   def title
@@ -16,4 +21,5 @@ class Wikipedia
     id = keys.first
     data[id]
   end
+
 end
